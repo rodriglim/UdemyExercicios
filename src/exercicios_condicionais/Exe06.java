@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class Exe06 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         double valorInserido;
         try {
