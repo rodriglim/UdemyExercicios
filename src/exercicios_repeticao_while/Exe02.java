@@ -3,6 +3,7 @@ package exercicios_repeticao_while;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
+
 public class Exe02 {
 
     private static String coordenadaTexto;
@@ -10,7 +11,7 @@ public class Exe02 {
     public static void main(String[] args) {
 
         int coordenadaX, coordenadaY;
-
+ 
         coordenadaX = Integer.parseInt(JOptionPane.showInputDialog("Coordenada X: "));
         coordenadaY = Integer.parseInt(JOptionPane.showInputDialog("Coordenada Y: "));
         
