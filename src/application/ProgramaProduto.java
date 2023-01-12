@@ -6,16 +6,11 @@ public class ProgramaProduto {
 
     public static void main(String[] args) {
 
-        Produto p = new Produto("TV", 900.00, 10);
+        Produto p1 = new Produto("TV", 900.00, 668);
+        Produto p2 = new Produto("Geladeira", 2500);
 
-        System.out.println(p.toString());
-
-        p.adicionarProduto(5);
-        System.out.println(p.toString());
-        p.removerProduto(45);
-        System.out.println(p.toString());
-        p.removerProduto(5);
-        System.out.println(p.toString());
+        System.out.println(p1.toString());
+        System.out.println(p2.toString());
 
     }
 }

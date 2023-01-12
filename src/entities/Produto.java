@@ -1,5 +1,8 @@
 package entities;
 
+import java.util.Locale;
+import java.text.NumberFormat;
+
 public class Produto {
 
     private String nome;
@@ -12,7 +15,11 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -37,8 +44,8 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public double valorTotalEstoque() {
-        return this.getPreco() * this.getQuantidade();
+    public String valorTotalEstoque() {
+        return formatarMoeda(this.getPreco() * this.getQuantidade());
     }
 
     public void adicionarProduto(int quantidade) {
@@ -46,18 +53,25 @@ public class Produto {
     }
 
     public void removerProduto(int quantidade) {
-        if(this.getQuantidade() <= quantidade){
+        if (this.getQuantidade() <= quantidade) {
             System.out.println("Quantidade não disponivel no estoque");
-        }else{
+        } else {
             this.quantidade -= quantidade;
         }
-     
+
     }
 
+    private String formatarMoeda(double valor) {
+        Locale localeBrasil = new Locale("pt", "BR");
+        String moeda = NumberFormat.getCurrencyInstance(localeBrasil).format(valor);
+        return moeda;
+    }
     @Override
     public String toString() {
-        return "Produto{" + "nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade +", Total Preço = " + valorTotalEstoque() + '}';
+
+        String format = String.format("Produto: %s, Preço: %s, "
+                + "Quantidade: %d, Valor total: %s", nome, formatarMoeda(preco), quantidade, valorTotalEstoque());
+        return format;
     }
-    
-    
+
 }
