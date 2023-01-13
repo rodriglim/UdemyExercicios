@@ -9,6 +9,10 @@ public class Produto {
     private double preco;
     private int quantidade;
 
+    public Produto() {
+        
+    }
+
     public Produto(String nome, double preco, int quantidade) {
         this.nome = nome;
         this.preco = preco;
@@ -40,10 +44,6 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public String valorTotalEstoque() {
         return formatarMoeda(this.getPreco() * this.getQuantidade());
     }
@@ -69,9 +69,9 @@ public class Produto {
     @Override
     public String toString() {
 
-        String format = String.format("Produto: %s, Preço: %s, "
+        return String.format("Produto: %s, Preço: %s, "
                 + "Quantidade: %d, Valor total: %s", nome, formatarMoeda(preco), quantidade, valorTotalEstoque());
-        return format;
+        
     }
 
 }
